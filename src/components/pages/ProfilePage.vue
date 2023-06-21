@@ -178,7 +178,7 @@
               {{ product.product.name }}
             </router-link>
             <p class="mt-2 text-2xl text-blue-500 font-bold">
-              {{ order.price }}₴
+              {{ product.price }}₴
             </p>
             <div class="group cursor-pointer">
               <router-link
