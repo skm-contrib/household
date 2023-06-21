@@ -11,7 +11,7 @@ export default function restAuth() {
   const loginUser = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:8001/api/v1/auth/authenticate",
+        "http://localhost:8080/api/v1/auth/authenticate",
         data
       );
       let token = response.data.token;
@@ -30,7 +30,6 @@ export default function restAuth() {
   };
 
   const userLogged = async () => {
-    6;
     if ("token" in localStorage) {
       const token = localStorage.getItem("token");
       console.log(token);
