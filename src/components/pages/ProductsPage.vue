@@ -1,15 +1,17 @@
 <template>
-  <div class="flex flex-col w-2/3 m-auto">
-    <p class="text-6xl font-bold text-neutral-700 mb-12">Весь асортимент тут</p>
+  <div class="flex flex-col sm:w-2/3 m-auto">
+    <p
+      class="sm:text-6xl px-4 sm:px-0 text-xl font-bold text-neutral-700 mb-12"
+    ></p>
 
     <div
-      class="gap-4 m-auto grid grid-cols-3 w-full mb-32 items-start align-top top-0"
+      class="gap-4 px-4 sm:px-0 m-auto flex flex-col-reverse sm:grid sm:grid-cols-3 w-full mb-32 items-start align-top top-0"
     >
       <div
-        class="w-full col-span-2 flex relative flex-grow gap-4 rounded-3x px-12"
+        class="w-full col-span-2 flex relative flex-grow gap-4 rounded-3x sm:px-12"
       >
         <div
-          class="grid grid-cols-3 w-auto align-baseline justify-center flex-col gap-2"
+          class="grid grid-cols-2 sm:grid-cols-3 w-auto align-baseline justify-center flex-col gap-2"
         >
           <div
             v-for="product in searchProducts"
@@ -38,11 +40,11 @@
             <div class="flex flex-grow flex-col text-neutral-700">
               <router-link
                 :to="{ name: 'ProductPage', params: { id: product.id } }"
-                class="duration-300 hover:text-neutral-500 break-word font-bold text-4xl text-neutral-700"
+                class="duration-300 hover:text-neutral-500 break-word font-bold text-xl sm:text-4xl text-neutral-700"
               >
                 {{ product.name }}
               </router-link>
-              <p class="mt-2 text-4xl text-blue-500 font-bold">
+              <p class="mt-2 sm:text-4xl text-blue-500 font-bold">
                 {{ product.price }}₴
               </p>
               <div class="group cursor-pointer">
@@ -73,7 +75,7 @@
       </div>
 
       <div
-        class="flex flex-col top-0 justify-start align-top border-emerald-400 p-12 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg"
+        class="flex flex-col w-full px-4 sm:px-0 top-0 justify-start align-top border-emerald-400 p-12 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg"
       >
         <label class="text-sm text-gray-400" for=""
           >Знайдіть товар який вам потрібно</label

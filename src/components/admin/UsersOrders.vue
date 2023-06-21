@@ -2,8 +2,8 @@
   <div
     class="flex flex-row justify-between bg-white p-6 bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-3xl mb-12"
   >
-    <div class="m-auto w-2/3 flex flex-col gap-2">
-      <p class="text-6xl font-bold text-neutral-700 text-center">
+    <div class="m-auto p-4 sm:p-0 sm:w-2/3 flex flex-col gap-2">
+      <p class="sm:text-6xl text-2xl font-bold text-neutral-700 text-center">
         Замовлення користувачів
       </p>
     </div>
@@ -14,7 +14,7 @@
   <div
     v-for="order in orders"
     :key="order.id"
-    class="flex flex-col justify-between bg-white p-6 bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-3xl mb-12"
+    class="flex justify-between flex-col items-center sm:flex-row sm:gap-24"
   >
     <div class="flex flex-col">
       <p class="text-4xl font-bold text-neutral-700 py-2">
@@ -26,7 +26,9 @@
       </div>
 
       <div v-for="product in order.products" :key="product">
-        <div class="flex justify-between flex-row gap-24">
+        <div
+          class="flex justify-between flex-col items-center sm:flex-row sm:gap-24"
+        >
           <div>
             <img
               class="m-4 h-32 w-32 object-cover rounded-3xl"

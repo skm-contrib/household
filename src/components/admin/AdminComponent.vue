@@ -1,7 +1,10 @@
 <template>
-  <div v-if="user.role == 'ROLE_ADMIN'" class="flex flex-col w-2/3 m-auto">
+  <div
+    v-if="user.role == 'ROLE_ADMIN'"
+    class="flex flex-col p-4 sm:p-0 sm:w-2/3 m-auto"
+  >
     <div
-      class="flex flex-row justify-evenly bg-white p-6 bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-3xl mb-12"
+      class="flex flex-col sm:flex-row justify-evenly bg-white p-6 bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-3xl mb-12"
     >
       <div
         class="w-full"

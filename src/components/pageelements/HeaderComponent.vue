@@ -1,8 +1,8 @@
 <template>
   <div
-    class="top-0 left-1/2 -translate-x-1/2 fixed bg-white items-center bg-opacity-70 py-8 justify-evenly flex w-2/3 m-auto rounded-b-3xl backdrop-filter backdrop-blur-lg"
+    class="top-0 sm:left-1/2 flex-row sm:-translate-x-1/2 fixed bg-white items-center bg-opacity-70 py-2 sm:py-8 justify-evenly flex w-screen sm:w-2/3 m-auto rounded-b-3xl backdrop-filter backdrop-blur-lg"
   >
-    <div class="gap-4 flex flex-row text-lg">
+    <div class="gap-4 flex flex-col sm:flex-row text-lg">
       <router-link class="link" :to="{ name: 'Home' }">Головна</router-link>
       <router-link class="link" :to="{ name: 'Products' }">Магазин</router-link>
       <router-link

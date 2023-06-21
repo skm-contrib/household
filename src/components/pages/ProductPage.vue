@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-row w-2/3 m-auto justify-between gap-4">
+  <div class="flex flex-col sm:flex-row sm:w-2/3 m-auto justify-between gap-4">
     <div class="flex flex-col" v-if="product">
-      <div class="grid grid-cols-3 gap-12">
+      <div class="grid sm:grid-cols-3 gap-12">
         <div>
           <div
             class="backdrop-filter border-0 bg-white bg-opacity-40 backdrop-blur-sm group cursor-pointer absolute routerlink m-2"
@@ -14,13 +14,13 @@
             </router-link>
           </div>
           <img
-            class="rounded-3xl"
+            class="rounded-3xl p-4 sm:p-0"
             :src="'http://localhost:8001/api/v1/images/' + product.imagePath"
             alt=""
           />
         </div>
         <div
-          class="flex col-span-2 p-12 flex-col bg-white border-2 border-white rounded-3xl text-neutral-700 bg-opacity-70 backdrop-filter backdrop-blur-lg"
+          class="flex sm:col-span-2 sm:p-12 p-4 mx-4 sm:mx-0 flex-col bg-white border-2 border-white rounded-3xl text-neutral-700 bg-opacity-70 backdrop-filter backdrop-blur-lg"
         >
           <h1 class="break-word font-bold text-4xl text-neutral-700">
             {{ product.name }}
@@ -71,7 +71,7 @@
         </div>
       </div>
 
-      <div class="flex justify-center mt-12 flex-row w-full">
+      <div class="flex m-4 sm:m-0 justify-center mt-12 flex-row w-full">
         <div
           class="w-full flex p-12 flex-col bg-white border-2 border-white rounded-3xl text-neutral-700 bg-opacity-70 backdrop-filter backdrop-blur-lg"
         >
@@ -96,10 +96,12 @@
       </div>
     </div>
     <div
-      class="flex p-12 w-1/3 flex-col bg-white border-2 border-white rounded-3xl text-neutral-700 bg-opacity-70 backdrop-filter backdrop-blur-lg"
+      class="flex m-4 sm:m-0 sm:p-12 sm:w-1/3 flex-col bg-white border-2 border-white rounded-3xl text-neutral-700 bg-opacity-70 backdrop-filter backdrop-blur-lg"
     >
-      <h1 class="break-word font-bold text-4xl text-neutral-700">Відгуки</h1>
-      <div class="overflow-visible">
+      <h1 class="break-word font-bold text-4xl p-4 sm:p-0 text-neutral-700">
+        Відгуки
+      </h1>
+      <div class="overflow-visible m-4 sm:m-0">
         <div
           v-for="review in product.reviews"
           :key="review.id"
@@ -128,7 +130,7 @@
           </div>
         </div>
       </div>
-      <div class="bottom-4 absolute mx-4 left-0 right-0">
+      <div class="bottom-4 sm:absolute mx-4 left-0 right-0">
         <label class="text-sm text-gray-400"
           >Напишіть вашу думку про даний продукт</label
         >

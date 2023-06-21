@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col m-auto justify-center w-2/3">
+  <div class="flex flex-col m-auto justify-center sm:w-2/3">
     <div
-      class="w-1/3 gap-4 border-2 border-white bg-white rounded-3xl m-auto flex flex-col bg-opacity-70 justify-evenly backdrop-filter backdrop-blur-lg"
+      class="sm:w-1/3 gap-4 border-2 border-white bg-white rounded-3xl m-auto flex flex-col bg-opacity-70 justify-evenly backdrop-filter backdrop-blur-lg"
     >
       <h1 class="text-4xl mt-12 font-bold text-neutral-600 text-center">
         Авторизація

@@ -1,8 +1,8 @@
 <template>
-  <div class="m-auto w-2/3 flex justify-center shadow-lg">
-    <div class="grid grid-cols-2 h-full w-full">
+  <div class="m-auto sm:w-2/3 p-4 sm:p-0 flex justify-center shadow-lg">
+    <div class="grid sm:grid-cols-2 h-full w-full">
       <div
-        class="flex flex-col justify-center bg-neutral-900 h-full w-full p-12"
+        class="flex flex-col justify-center bg-neutral-900 h-full w-full p-2 sm:p-12"
       >
         <div class="text-center">
           <h1 class="break-word text-lg text-neutral-500">
@@ -11,7 +11,7 @@
         </div>
         <div>
           <div
-            class="flex my-12 flex-row justify-between text-xl font-bold text-neutral-400 border-b-2 border-neutral-600"
+            class="flex my-4 sm:my-12 flex-row justify-between text-sm sm:text-xl font-bold text-neutral-400 border-b-2 border-neutral-600"
           >
             <p>Назва продукту</p>
             <p>Ціна та кількість</p>
@@ -19,14 +19,14 @@
         </div>
         <div class="flex-col h-full w-full">
           <div
-            class="flex flex-col mt-2 text-neutral-100"
+            class="flex flex-col sm:mt-2 text-neutral-100"
             v-for="product in userBasketProducts"
             :key="product"
           >
             <div
               class="flex flex-row justify-between w-full items-center gap-8"
             >
-              <div class="flex flex-row gap-4 items-center">
+              <div class="flex text-sm sm:text-md flex-row gap-4 items-center">
                 <p>
                   {{ product.name }}
                 </p>
@@ -39,7 +39,7 @@
               </div>
 
               <div class="flex flex-row gap-4 items-center">
-                <p class="font-bold text-xl">{{ product.price }}₴</p>
+                <p class="font-bold text-sm sm:text-xl">{{ product.price }}₴</p>
                 <h2 class="">
                   x<span class="text-2xl font-bold">{{ product.count }}</span>
                 </h2>

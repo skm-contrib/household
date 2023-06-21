@@ -1,13 +1,13 @@
 <template>
-  <div class="flex flex-col w-2/3 m-auto">
+  <div class="flex flex-col sm:w-2/3 m-auto">
     <div
-      class="flex flex-row justify-between bg-white p-6 bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-3xl mb-12"
+      class="flex m-4 sm:m-0 flex-row justify-between bg-white p-6 bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-3xl mb-12"
     >
       <div class="m-auto w-2/3 flex flex-col gap-2">
-        <p class="text-6xl font-bold text-neutral-700">
+        <p class="sm:text-6xl text-2xl font-bold text-neutral-700">
           Привіт, {{ user.name }}
         </p>
-        <p class="text-3xl font-medium text-neutral-700">
+        <p class="sm:text-3xl font-medium text-neutral-700">
           Ваш кошик виглядає наступним чином:
         </p>
       </div>
@@ -16,12 +16,12 @@
       >
         <router-link
           :to="{ name: 'UserEdit' }"
-          class="routerlink cursor-pointer bg-emerald-500 border-emerald-500 hover:border-emerald-500 hover:text-emerald-500"
+          class="routerlink cursor-pointer text-center bg-emerald-500 border-emerald-500 hover:border-emerald-500 hover:text-emerald-500"
           >Редагувати профіль</router-link
         >
         <div
           @click="logout"
-          class="routerlink cursor-pointer bg-red-500 border-red-500 hover:border-red-500 hover:text-red-500"
+          class="routerlink cursor-pointer text-center bg-red-500 border-red-500 hover:border-red-500 hover:text-red-500"
         >
           Вийти з аккаунту
         </div>
@@ -40,20 +40,22 @@
       </div>
     </div>
     <div
-      class="gap-4 w-auto m-auto flex flex-row mb-32 items-start align-top top-0"
+      class="gap-4 p-4 sn:p-0 w-auto m-auto flex flex-col-reverse sm:flex-row mb-32 items-start align-top top-0"
     >
       <div
         v-if="userBasketProducts.length != 0"
-        class="mx-12 w-auto justify-evenly pt-12 flex-col gap-4 border-emerald-400 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg p-4"
+        class="sm:mx-12 w-full sm:w-auto justify-evenly pt-12 flex-col gap-4 border-emerald-400 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg p-4"
       >
-        <div class="flex flex-row w-full p-4 gap-12">
+        <div class="flex flex-col sm:flex-row w-full p-4 gap-12">
           <div class="flex flex-col">
             <div
               class="flex flex-col text-neutral-700"
               v-for="product in userBasketProducts"
               :key="product"
             >
-              <div class="grid grid-cols-5 justify-between items-center gap-8">
+              <div
+                class="grid grid-cols-2 sm:grid-cols-5 justify-between items-center gap-8"
+              >
                 <img
                   class="w-32 h-32 object-cover"
                   :src="
@@ -112,11 +114,11 @@
       </div>
 
       <div
-        class="flex flex-col top-0 w-1/3 justify-start align-top border-emerald-400 p-12 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg"
+        class="flexflex-col w-full top-0 sm:w-1/3 justify-start align-top border-emerald-400 sm:p-12 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg"
         v-if="userBasketProducts.length != 0"
       >
         <div
-          class="py-4 my-4 justify-center gap-4 group routerlink flex flex-row items-center cursor-pointer"
+          class="py-4 my-4 m-4 sm:m-0 justify-center gap-4 group routerlink flex flex-row items-center cursor-pointer"
         >
           <router-link class="" :to="{ name: 'Payout' }">ОПЛАТИТИ</router-link>
           <img
@@ -132,7 +134,7 @@
           <img class="h-4" src="../../assets/paysystems/paypal.png" alt="" />
           <img class="h-4" src="../../assets/paysystems/visa.png" alt="" />
         </div>
-        <div>
+        <div class="m-4 sm:m-0">
           <p class="font-bold text-neutral-400">
             Сума до сплати: <br /><span class="text-2xl text-neutral-600">
               {{ sumToPay }}
@@ -142,16 +144,18 @@
       </div>
     </div>
     <div>
-      <h2 class="font-bold text-2xl text-neutral-700">Історія замовлень</h2>
+      <h2 class="font-bold m-4 sm:m-0 text-2xl text-neutral-700">
+        Історія замовлень
+      </h2>
     </div>
-    <div class="flex flex-col gap-4 mt-4 mb-32">
+    <div class="flex m-4 sm:m-0 flex-col gap-4 mt-4 mb-32">
       <div
         class="flex flex-col justify-between bg-white p-4 rounded-xl"
         v-for="order in orders"
         :key="order.id"
       >
         <div
-          class="flex flex-row justify-between"
+          class="flex flex-col sm:flex-row justify-between"
           v-for="product in order.products"
           :key="product.id"
         >
