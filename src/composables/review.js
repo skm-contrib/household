@@ -11,19 +11,23 @@ export default function restReview() {
 
   const getReview = async (id) => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/reviews/" + id
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/reviews/" +
+        id
     );
     review.value = response.data.data;
   };
 
   const getReviews = async () => {
-    const response = await axios.get("http://localhost:8001/api/v1/reviews");
+    const response = await axios.get(
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/reviews"
+    );
     reviews.value = response.data.data;
   };
 
   const getReviewsByProductId = async (product_id) => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/reviews?product=" + product_id
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/reviews?product=" +
+        product_id
     );
     reviews.value = response.data.data;
   };
@@ -31,7 +35,8 @@ export default function restReview() {
   const updateReview = async (id) => {
     try {
       await axios.put(
-        "http://localhost:8001/api/v1/reviews/" + id,
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/reviews/" +
+          id,
         review.value
       );
     } catch (error) {
@@ -43,7 +48,10 @@ export default function restReview() {
 
   const createReview = async (data) => {
     try {
-      await axios.post("http://localhost:8001/api/v1/reviews", data);
+      await axios.post(
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/reviews",
+        data
+      );
     } catch (error) {
       if (error.response.status === 422) {
         errors.value = error.response.data.errors;
@@ -56,7 +64,10 @@ export default function restReview() {
     if (!window.confirm("Видалити відгук?")) {
       return;
     }
-    await axios.delete("http://localhost:8001/api/v1/reviews/" + id);
+    await axios.delete(
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/reviews/" +
+        id
+    );
   };
 
   return {

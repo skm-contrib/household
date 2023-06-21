@@ -9,11 +9,14 @@ export default function restUser() {
 
   const getUser = async () => {
     try {
-      const response = await axios.get("http://localhost:8001/api/v1/users", {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      const response = await axios.get(
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/users",
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
       console.log(response);
       user.value = response.data;
     } catch (er) {
@@ -22,13 +25,19 @@ export default function restUser() {
   };
 
   const getUsers = async () => {
-    const response = await axios.get("http://localhost:8001/api/v1/users");
+    const response = await axios.get(
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/users"
+    );
     users.value = response.data.data;
   };
 
   const updateUser = async (id) => {
     try {
-      await axios.put("http://localhost:8001/api/v1/users/" + id, user.value);
+      await axios.put(
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/users/" +
+          id,
+        user.value
+      );
     } catch (error) {
       errors.value = error.response.data.errors;
     }
@@ -36,7 +45,10 @@ export default function restUser() {
 
   const createUser = async (data) => {
     try {
-      await axios.post("http://localhost:8001/api/v1/users", data);
+      await axios.post(
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/users",
+        data
+      );
     } catch (error) {
       if (error.response.status === 422) {
         errors.value = error.response.data.errors;
@@ -48,7 +60,10 @@ export default function restUser() {
     if (!window.confirm("Видалити користувача?")) {
       return;
     }
-    await axios.delete("http://localhost:8001/api/v1/users/" + id);
+    await axios.delete(
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/users/" +
+        id
+    );
   };
 
   return {

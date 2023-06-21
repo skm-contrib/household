@@ -11,7 +11,7 @@ export default function restAuth() {
   const loginUser = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/auth/authenticate",
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/auth/authenticate",
         data
       );
       let token = response.data.token;

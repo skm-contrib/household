@@ -12,20 +12,20 @@ export default function restProduct() {
 
   const getProducts = async () => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/products/all"
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products/all"
     );
     products.value = response.data;
   };
   const getProductsCount = async () => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/products/count"
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products/count"
     );
     productsCount.value = response.data;
   };
 
   const getProductsByPageNumber = async (page_number, products_count) => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/products?page=" +
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products?page=" +
         page_number +
         "&count=" +
         products_count
@@ -35,7 +35,8 @@ export default function restProduct() {
 
   const getProductsByCategoryId = async (category_id) => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/products?category=" + category_id
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products?category=" +
+        category_id
     );
     console.log(category_id);
     products.value = response.data.data;
@@ -46,7 +47,7 @@ export default function restProduct() {
     category_id
   ) => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/products/all?category=" +
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products/all?category=" +
         category_id +
         "&page=" +
         page_number
@@ -61,7 +62,7 @@ export default function restProduct() {
     count
   ) => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/products?search=" +
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products?search=" +
         name +
         "&category_id=" +
         category_id +
@@ -76,7 +77,7 @@ export default function restProduct() {
 
   const getProductsByNameAndPageNumber = async (name, page_number) => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/products/all?search=" +
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products/all?search=" +
         name +
         "&page=" +
         page_number
@@ -86,7 +87,8 @@ export default function restProduct() {
 
   const getProduct = async (id) => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/products/" + id
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products/" +
+        id
     );
     product.value = response.data;
   };
@@ -96,7 +98,7 @@ export default function restProduct() {
       const formData = new FormData();
       formData.append("image", product.value.image);
       const response = await axios.post(
-        "http://localhost:8001/api/v1/images/upload",
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/images/upload",
         formData
       );
 
@@ -108,7 +110,11 @@ export default function restProduct() {
         price: product.value.price,
         disabled: false,
       });
-      await axios.put("http://localhost:8001/api/v1/products/" + id, form);
+      await axios.put(
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products/" +
+          id,
+        form
+      );
     } catch (error) {
       if (error.response.status === 422) {
         errors.value = error.response.data.errors;
@@ -122,7 +128,7 @@ export default function restProduct() {
       const formData = new FormData();
       formData.append("image", data.image);
       const response = await axios.post(
-        "http://localhost:8001/api/v1/images/upload",
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/images/upload",
         formData
       );
       console.log(response.data);
@@ -137,7 +143,10 @@ export default function restProduct() {
         disabled: false,
       });
 
-      await axios.post("http://localhost:8001/api/v1/products", form);
+      await axios.post(
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products",
+        form
+      );
     } catch (err) {
       errors.value = err.response.data.errors;
     }
@@ -148,7 +157,10 @@ export default function restProduct() {
     if (!window.confirm("Видалити продукт?")) {
       return;
     }
-    await axios.delete("http://localhost:8001/api/v1/products/" + id);
+    await axios.delete(
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products/" +
+        id
+    );
     router.go();
   };
 

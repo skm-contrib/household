@@ -11,24 +11,30 @@ export default function restOrder() {
 
   const getOrder = async (id) => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/orders/" + id
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/orders/" +
+        id
     );
     order.value = response.data.data;
   };
 
   const getOrders = async () => {
-    const response = await axios.get("http://localhost:8001/api/v1/orders/all");
+    const response = await axios.get(
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/orders/all"
+    );
     orders.value = response.data;
     console.log(orders.value);
   };
 
   const getUserOrders = async () => {
     try {
-      const response = await axios.get("http://localhost:8001/api/v1/orders", {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      const response = await axios.get(
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/orders",
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
       orders.value = response.data;
     } catch (err) {
       console.log(err);
@@ -37,7 +43,8 @@ export default function restOrder() {
 
   const getOrdersByStatus = async (status_id) => {
     const response = await axios.get(
-      "http://localhost:8001/api/v1/orders?status=" + status_id
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/orders?status=" +
+        status_id
     );
     orders.value = response.data.data;
   };
@@ -45,7 +52,10 @@ export default function restOrder() {
   const updateOrderStatus = async (id, status_id) => {
     try {
       await axios.put(
-        "http://localhost:8001/api/v1/orders/" + id + "/status=" + status_id
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/orders/" +
+          id +
+          "/status=" +
+          status_id
       );
     } catch (error) {
       console.log(error);
@@ -70,7 +80,7 @@ export default function restOrder() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8001/api/v1/orders",
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/orders",
         order
       );
       console.log(response.data);
@@ -87,7 +97,10 @@ export default function restOrder() {
     if (!window.confirm("Видалити замовлення?")) {
       return;
     }
-    await axios.delete("http://localhost:8001/api/v1/orders/" + id);
+    await axios.delete(
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/orders/" +
+        id
+    );
   };
 
   return {
