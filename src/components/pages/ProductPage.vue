@@ -105,7 +105,7 @@
           <h1 class="break-word font-bold text-4xl p-4 sm:p-0 text-neutral-700">
             Відгуки
           </h1>
-          <div class="overflow-visible m-4 pt-24 sm:m-0">
+          <div class="overflow-visible m-4 sm:m-0">
             <div
               v-for="review in product.reviews"
               :key="review.id"

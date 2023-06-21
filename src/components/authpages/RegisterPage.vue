@@ -77,7 +77,7 @@
                 <div class="items-center gap-4 mt-2 flex justify-center">
                   <div @click="signUpUser(form)">
                     <p
-                      class="routerlink bg-emerald-600 border-emerald-600 hover:text-emerald-600 font-bold"
+                      class="bg-emerald-400 text-white p-4 rounded-xl cursor-pointer duration-300 hover:bg-emerald-600 font-bold"
                     >
                       Створити аккаунт
                     </p>

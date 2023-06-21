@@ -12,7 +12,6 @@
         >ADMIN</router-link
       >
     </div>
-    <div class="flex">LOGO</div>
     <div class="flex flex-row gap-4">
       <router-link
         :to="{ name: 'Profile' }"

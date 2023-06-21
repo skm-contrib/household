@@ -35,8 +35,14 @@
                 <div v-for="error in errors" :key="error.id">
                   <p class="text-sm text-red-400">{{ error }}</p>
                 </div>
-                <div class="items-center gap-4 mt-2 flex justify-center">
-                  <div @click="loginUser(form)">Продовжити</div>
+                <div
+                  class="w-full flex flex-col justify-center text-center m-auto items-center"
+                >
+                  <div
+                    class="items-center bg-emerald-400 p-4 rounded-xl text-white font-bold hover:bg-emerald-600 duration-300 cursor-pointer w-fit justify-center text-center gap-4 mt-2 flex"
+                  >
+                    <div @click="loginUser(form)">Продовжити</div>
+                  </div>
                 </div>
                 <div
                   class="pt-4 flex text-sm flex-col justify-center text-center items-center"
