@@ -76,25 +76,25 @@
       </div>
 
       <div
-        class="flex flex-col p-4 w-full px-4 sm:px-0 top-0 justify-start align-top border-emerald-400 p-12 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg"
+        class="flex flex-col w-full px-4 sm:px-0 top-0 justify-start align-top border-emerald-400 p-12 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg"
       >
-        <label class="text-sm text-gray-400" for=""
+        <label class="text-sm m-4 text-gray-400" for=""
           >Знайдіть товар який вам потрібно</label
         >
         <div class="flex flex-row">
           <input
-            class="w-full px-4 py-4 border-2 border-emerald-500 rounded-xl shadow-2xl transition-colors duration-300 ease-in-out focus:outline-none focus:border-transparent"
+            class="w-full m-4 px-4 py-4 border-2 border-emerald-500 rounded-xl shadow-2xl transition-colors duration-300 ease-in-out focus:outline-none focus:border-transparent"
             type="text"
             v-model="name"
           />
         </div>
-        <div class="my-4 w-full justify-center flex flex-col">
-          <label class="text-sm text-gray-400" for=""
+        <div class="my-4 w-full m-4 justify-center flex flex-col">
+          <label class="text-sm m-4 text-gray-400" for=""
             >Вибір бажаної категорії</label
           >
           <select
             v-model="category_id"
-            class="h-16 rounded-xl font-medium cursor-pointer border-2 shadow-xl border-emerald-500"
+            class="h-16 m-4 rounded-xl font-medium cursor-pointer border-2 shadow-xl border-emerald-500"
             @change="makeSearch"
           >
             <option
