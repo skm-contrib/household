@@ -11,13 +11,13 @@
 <script setup></script>
 
 <script>
-import FooterComponent from "./FooterComponent.vue";
+//import FooterComponent from "./FooterComponent.vue";
 import HeaderComponent from "./HeaderComponent.vue";
 export default {
   name: "App",
   components: {
     HeaderComponent,
-    FooterComponent,
+    //FooterComponent,
   },
 };
 </script>
