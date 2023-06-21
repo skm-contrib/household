@@ -28,7 +28,7 @@
       class="sm:w-2/3 grid grid-cols-2 gap-4 sm:grid-cols-3 border-2 border-white bg-white rounded-3xl m-auto bg-opacity-70 justify-evenly backdrop-filter backdrop-blur-lg"
     >
       <div
-        class="flex bg-emerald-200 rounded-xl m-2 p-2 pt-12 flex-col gap-12"
+        class="flex bg-neutral-500 relative rounded-xl m-2 p-2 pt-12 flex-col gap-12"
         v-for="product in products"
         :key="product.id"
       >
@@ -72,8 +72,8 @@
           <p class="mt-2 sm:text-2xl m-2 sm:m-0 text-blue-700 font-bold">
             {{ product.price }}₴
           </p>
-          <p class="mt-2 m-2 sm:m-0 text-md">{{ product.description }}</p>
-
+          <!--<p class="mt-2 m-2 sm:m-0 text-md">{{ product.description }}</p>
+-->
           <div
             class="flex flex-col w-full m-auto justify-center"
             @click="addToBasket(product.id)"
