@@ -15,7 +15,10 @@
           </div>
           <img
             class="rounded-3xl p-4 sm:p-0"
-            :src="'http://localhost:8001/api/v1/images/' + product.imagePath"
+            :src="
+              'https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/images/' +
+              product.imagePath
+            "
             alt=""
           />
         </div>

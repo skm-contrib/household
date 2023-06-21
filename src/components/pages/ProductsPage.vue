@@ -22,7 +22,8 @@
               <img
                 class="w-full object-cover block aspect-square rounded-2xl"
                 :src="
-                  'http://localhost:8001/api/v1/images/' + product.imagePath
+                  'https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/images/' +
+                  product.imagePath
                 "
                 alt=""
               />

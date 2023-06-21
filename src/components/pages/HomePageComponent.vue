@@ -35,7 +35,10 @@
         <div class="relative cursor-pointer flex flex-col group">
           <img
             class="m-4 sm:h-96 object-cover rounded-3xl"
-            :src="'http://localhost:8001/api/v1/images/' + product.imagePath"
+            :src="
+              'https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/images/' +
+              product.imagePath
+            "
             alt="no img"
           />
           <div

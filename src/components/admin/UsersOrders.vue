@@ -33,7 +33,7 @@
             <img
               class="m-4 h-32 w-32 object-cover rounded-3xl"
               :src="
-                'http://localhost:8001/api/v1/images/' +
+                'https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/images/' +
                 product.product.imagePath
               "
               alt=""
