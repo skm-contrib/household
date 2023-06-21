@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col sm:flex-row sm:w-2/3 m-auto justify-between gap-4">
+  <div class="flex flex-col sm:w-2/3 m-auto justify-between gap-4">
     <div class="flex flex-col" v-if="product">
       <div class="grid sm:grid-cols-3 gap-12">
         <div>
@@ -23,7 +23,7 @@
           />
         </div>
         <div
-          class="flex sm:col-span-2 sm:p-12 p-4 mx-4 sm:mx-0 flex-col bg-white border-2 border-white rounded-3xl text-neutral-700 bg-opacity-70 backdrop-filter backdrop-blur-lg"
+          class="flex sm:p-12 p-4 mx-4 sm:mx-0 flex-col bg-white border-2 border-white rounded-3xl text-neutral-700 bg-opacity-70 backdrop-filter backdrop-blur-lg"
         >
           <h1 class="break-word font-bold text-4xl text-neutral-700">
             {{ product.name }}
@@ -104,7 +104,7 @@
       <h1 class="break-word font-bold text-4xl p-4 sm:p-0 text-neutral-700">
         Відгуки
       </h1>
-      <div class="overflow-visible m-4 sm:m-0">
+      <div class="overflow-visible m-4 pt-24 sm:m-0">
         <div
           v-for="review in product.reviews"
           :key="review.id"
