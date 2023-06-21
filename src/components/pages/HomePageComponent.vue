@@ -53,7 +53,7 @@
         </div>
         <div class="flex flex-col text-neutral-700">
           <div
-            class="backdrop-filter backdrop-blur-xl group cursor-pointer m-2 sm:m-0 left-0 sm:ml-56 routerlink"
+            class="backdrop-filter backdrop-blur-xl group cursor-pointer m-2 sm:m-0 left-0 routerlink"
           >
             <router-link
               :to="{ name: 'Products', params: { id: product.category.id } }"
