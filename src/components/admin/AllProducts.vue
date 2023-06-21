@@ -5,7 +5,9 @@
       :key="product.id"
       class="flex mb-4 flex-col sm:flex-row justify-between bg-white sm:p-6 bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-3xl"
     >
-      <div class="flex w-auto flex-row p-4 gap-24 border-emerald-400">
+      <div
+        class="flex w-auto flex-col sm:flex-row p-4 gap-24 border-emerald-400"
+      >
         <div>
           <img
             class="h-44 w-44 object-cover rounded-3xl"

@@ -76,7 +76,7 @@
     </div>
     <div>
       <div class="grid sm:grid-cols-2 p-4 sm:p-0 gap-4">
-        <div class="flex sm:m-0 justify-center mt-12 flex-row w-full">
+        <div class="flex sm:m-0 justify-center sm:mt-12 flex-row w-full">
           <div
             class="w-full flex p-12 flex-col bg-white border-2 border-white rounded-3xl text-neutral-700 bg-opacity-70 backdrop-filter backdrop-blur-lg"
           >
@@ -91,7 +91,7 @@
             </div>
 
             <div class="mt-8 flex gap-12 items-center">
-              <div class="px-4">
+              <div class="sM;px-4">
                 <p class="font-bold text-neutral-600 text-2xl">
                   {{ product.description }}
                 </p>

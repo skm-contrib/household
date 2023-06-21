@@ -3,9 +3,9 @@
     <h1 class="text-4xl mb-12 font-bold text-neutral-600 text-center">
       Створення продукту
     </h1>
-    <div class="flex flex-col m-auto justify-center w-2/3">
+    <div class="flex flex-col m-auto justify-center sm:w-2/3">
       <div
-        class="w-2/3 gap-4 border-2 border-white bg-white rounded-3xl m-auto flex flex-col bg-opacity-70 justify-evenly backdrop-filter backdrop-blur-lg"
+        class="sm:w-2/3 gap-4 border-2 border-white bg-white rounded-3xl m-auto flex flex-col bg-opacity-70 justify-evenly backdrop-filter backdrop-blur-lg"
       >
         <div class="grow flex flex-col text-center justify-center">
           <div class="text-left">

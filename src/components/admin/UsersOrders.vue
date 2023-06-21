@@ -122,9 +122,8 @@ import { onMounted } from "vue";
 import restOrderStatus from "@/composables/order_status";
 import restOrders from "@/composables/orders";
 
-const { getOrders, orders } = restOrders();
-const { getOrderStatuses, updateOrderStatus, order_statuses } =
-  restOrderStatus();
+const { getOrders, orders, updateOrderStatus } = restOrders();
+const { getOrderStatuses, order_statuses } = restOrderStatus();
 
 const getAllProductsAndStatuses = async () => {
   await getOrderStatuses();

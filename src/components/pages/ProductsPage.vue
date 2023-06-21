@@ -28,10 +28,10 @@
                 alt=""
               />
               <div
-                class="absolute rounded-2xl backdrop-filter backdrop-blur-md inset-0 bg-neutral-800 bg-opacity-30 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out flex items-center justify-center"
+                class="absolute rounded-2xl overflow-hidden backdrop-filter backdrop-blur-md inset-0 bg-neutral-800 bg-opacity-30 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out flex items-center justify-center"
               >
                 <p
-                  class="text-white font-bold px-4 py-2 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+                  class="text-white sm:font-bold px-4 py-2 text-sm max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
                 >
                   {{ product.description }}
                 </p>

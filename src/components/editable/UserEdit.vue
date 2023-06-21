@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col m-auto justify-center w-2/3 pb-48">
+  <div class="flex flex-col m-auto justify-center sm:w-2/3 pb-48">
     <div
       class="sm:w-1/3 w-full gap-4 border-2 border-white bg-white rounded-3xl sm:m-auto flex flex-col bg-opacity-70 justify-evenly backdrop-filter backdrop-blur-lg"
     >

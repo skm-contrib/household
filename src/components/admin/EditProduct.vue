@@ -3,9 +3,9 @@
     Редагування продукту
   </h1>
 
-  <div class="flex flex-col m-auto justify-center w-2/3 mb-32">
+  <div class="flex flex-col m-auto justify-center sm:w-2/3 mb-32">
     <div
-      class="w-2/3 gap-4 border-2 border-white bg-white rounded-3xl m-auto flex flex-col bg-opacity-70 justify-evenly backdrop-filter backdrop-blur-lg"
+      class="sm:w-2/3 gap-4 border-2 border-white bg-white rounded-3xl m-auto flex flex-col bg-opacity-70 justify-evenly backdrop-filter backdrop-blur-lg"
     >
       <div class="grow flex flex-col text-center justify-center">
         <div class="text-left">
@@ -44,10 +44,24 @@
                   type="number"
                   v-model="product.price"
                 />
+                <select
+                  v-if="product.category?.id"
+                  v-model="product.category.id"
+                  class="h-16 rounded-xl p-4 w-full font-medium cursor-pointer border-2 shadow-xl border-emerald-500"
+                  @change="makeSearch"
+                >
+                  <option
+                    v-for="category in categories"
+                    :value="category.id"
+                    :key="category.id"
+                  >
+                    {{ category.name }}
+                  </option>
+                </select>
                 <div v-for="review in product.reviews" :key="review.id">
                   <div
                     v-if="review.text != null"
-                    class="bg-emerald-600 gap-4 rounded-xl flex flex-row p-4 border-emerald-800 border-2 text-white"
+                    class="bg-emerald-600 gap-4 rounded-xl flex flex-col sm:flex-row p-4 sm:border-emerald-800 sm:border-2 text-white"
                   >
                     <div class="">
                       <div class="flex flex-col text-center">
@@ -65,12 +79,12 @@
                       <input
                         type="text"
                         v-model="review.text"
-                        class="bg-transparent"
+                        class="bg-transparent text-xl font-bold"
                       />
                     </div>
 
                     <div
-                      class="flex flex-col items-center justify-around gap-4 m-4 border-l-4 pl-4 border-neutral-700"
+                      class="flex flex-col items-center justify-around gap-4 m-4 sm:border-l-4 pl-4 border-neutral-700"
                     >
                       <div
                         @click="deleteReviewInComponent(review.id)"
@@ -106,7 +120,7 @@
                 <div class="items-center gap-4 mt-12 flex justify-center">
                   <button type="submit">
                     <div
-                      @click="updateProduct(product.id)"
+                      @click="updateProduct(product.id, product.image)"
                       class="routerlink m-4 p-4 bg-emerald-600 border-emerald-600 hover:border-emerald-600 hover:text-emerald-600 font-bold"
                     >
                       Оновити
@@ -131,7 +145,7 @@ import restReview from "@/composables/review";
 
 const router = useRoute();
 
-const { getCategories } = restCategory();
+const { getCategories, categories } = restCategory();
 const { getProduct, updateProduct, product } = restProduct();
 const { deleteReview } = restReview();
 

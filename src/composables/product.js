@@ -93,32 +93,38 @@ export default function restProduct() {
     product.value = response.data;
   };
 
-  const updateProduct = async (id) => {
+  const updateProduct = async (id, image) => {
     try {
-      const formData = new FormData();
-      formData.append("image", product.value.image);
-      const response = await axios.post(
-        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/images/upload",
-        formData
-      );
-
       const form = reactive({
         name: product.value.name,
         description: product.value.description,
         categoryId: product.value.category.id,
-        imagePath: response.data,
+        imagePath: null,
         price: product.value.price,
         disabled: false,
       });
+      if (image != null) {
+        const formData = new FormData();
+        console.log(product.value.imagePath);
+        formData.append("image", image);
+        const response = await axios.put(
+          "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/images/upload/" +
+            product.value.imagePath,
+          formData
+        );
+        form.imagePath = response.data;
+
+        console.log(response);
+      } else {
+        form.imagePath = product.value.imagePath;
+      }
       await axios.put(
         "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/products/" +
           id,
         form
       );
     } catch (error) {
-      if (error.response.status === 422) {
-        errors.value = error.response.data.errors;
-      }
+      console.log(error);
     }
     router.go();
   };

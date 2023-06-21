@@ -29,7 +29,7 @@
     </div>
     <div
       v-if="userBasketProducts.length == 0"
-      class="w-fit m-auto flex justify-center flex-col border-emerald-400 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg p-4"
+      class="w-fit m-auto flex justify-center mt-12 flex-col border-emerald-400 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg p-4"
     >
       <div class="flex m-auto flex-row w-full p-4 gap-12">
         <div class="flex flex-col">
@@ -156,6 +156,12 @@
         :key="order.id"
       >
         <div
+          class="w-fit m-4 p-4 rounded-xl shadow-lg"
+          :style="{ 'background-color': order.status.color }"
+        >
+          <p class="font-bold text-neutral-700">{{ order.status.name }}</p>
+        </div>
+        <div
           class="flex flex-col sm:flex-row justify-between"
           v-for="product in order.products"
           :key="product.id"
@@ -178,7 +184,7 @@
               {{ product.product.name }}
             </router-link>
             <p class="mt-2 text-2xl text-blue-500 font-bold">
-              {{ product.price }}₴
+              {{ product.product.price }}₴
             </p>
             <div class="group cursor-pointer">
               <router-link
@@ -204,11 +210,12 @@
     </div>
 
     <div
+      v-if="orders.length == 0"
       class="w-fit m-auto flex justify-center flex-col border-emerald-400 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg p-4"
     >
       <div class="flex m-auto flex-row w-full p-4 gap-12">
         <div class="flex flex-col">
-          <div v-if="orders.length == 0">
+          <div>
             <p class="font-black text-4xl text-neutral-600">
               Замовлення відсутні
             </p>

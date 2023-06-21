@@ -42,10 +42,10 @@
             alt="no img"
           />
           <div
-            class="sm:absolute rounded-3xl backdrop-filter backdrop-blur-md inset-0 bg-neutral-800 sm:m-4 bg-opacity-30 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out flex items-center justify-center"
+            class="absolute rounded-3xl backdrop-filter backdrop-blur-md inset-0 bg-neutral-800 sm:m-4 bg-opacity-30 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out flex items-center justify-center overflow-hidden"
           >
             <p
-              class="text-white font-bold sm:px-4 sm:py-2 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+              class="text-white sm:font-bold sm:px-4 sm:py-2 max-w-xs sm:max-w-sm md:max-w-md text-sm lg:max-w-lg xl:max-w-xl"
             >
               {{ product.description }}
             </p>
