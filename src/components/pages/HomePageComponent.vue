@@ -28,7 +28,7 @@
       class="sm:w-2/3 grid grid-cols-2 gap-4 sm:grid-cols-3 border-2 border-white bg-white rounded-3xl m-auto bg-opacity-70 justify-evenly backdrop-filter backdrop-blur-lg"
     >
       <div
-        class="flex bg-neutral-500 relative rounded-xl m-2 p-2 pt-12 flex-col gap-12"
+        class="flex bg-neutral-200 relative rounded-xl m-2 p-2 pt-12 flex-col gap-12"
         v-for="product in products"
         :key="product.id"
       >
