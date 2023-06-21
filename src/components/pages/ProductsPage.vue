@@ -128,7 +128,6 @@
 import restCategory from "../../composables/category";
 import { onMounted, ref } from "vue";
 import restProduct from "../../composables/product";
-import { useRoute } from "vue-router";
 
 const { getCategories, categories } = restCategory();
 
@@ -137,7 +136,6 @@ const category_id = ref(0);
 const page = ref(0);
 const name = ref("");
 const count = ref(100);
-const route = useRoute();
 
 const searchProducts = ref([]);
 
@@ -152,21 +150,16 @@ const makeSearch = async () => {
 };
 
 const getAllCategoriesAndMakeSearch = async () => {
-  await getCategories().then(() => {
+  await getCategories().then((response) => {
     category_id.value = categories.value[0].id;
+    console.log(response);
   });
 
   await makeSearch();
 };
 
 onMounted(() => {
-  if (route.params.id != null) {
-    category_id.value = route.params.id;
-    console.log(category_id.value);
-    makeSearch();
-  } else {
-    getAllCategoriesAndMakeSearch();
-  }
+  getAllCategoriesAndMakeSearch();
 });
 </script>
 

@@ -31,7 +31,7 @@ const routes = [
     component: PayoutPage,
   },
   {
-    path: "/products/:id?",
+    path: "/products",
     name: "Products",
     component: ProductsPage,
     props: true,
