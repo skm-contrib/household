@@ -76,7 +76,7 @@
       </div>
 
       <div
-        class="flex flex-col w-full px-4 sm:px-0 top-0 justify-start align-top border-emerald-400 p-12 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg"
+        class="flex flex-col m-4 w-full px-4 sm:px-0 top-0 justify-start align-top border-emerald-400 p-12 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg"
       >
         <label class="text-sm text-gray-400" for=""
           >Знайдіть товар який вам потрібно</label
@@ -108,13 +108,13 @@
         </div>
         <div class="flex flex-row justify-evenly pt-6">
           <div class="w-full">
-            <VueSlider
+            <!--<VueSlider
               class="hidden"
               v-model="maxprice"
               :min="0"
               :max="15000"
               :tooltip="'always'"
-            />
+            />-->
             <div class="text-center font-medium text-lg mt-6">
               <button class="routerlink w-32" @click="makeSearch">Пошук</button>
             </div>
@@ -128,9 +128,10 @@
 import restCategory from "../../composables/category";
 import { onMounted, ref } from "vue";
 import restProduct from "../../composables/product";
+import { useRoute } from "vue-router";
+
 const { getCategories, categories } = restCategory();
 
-import { useRoute } from "vue-router";
 const { getProductsByNameAndPageNumberAndCategoryId, products } = restProduct();
 const category_id = ref(0);
 const page = ref(0);
@@ -170,17 +171,17 @@ onMounted(() => {
 </script>
 
 <script>
-import VueSlider from "vue-slider-component";
-import "vue-slider-component/theme/default.css";
+//import VueSlider from "vue-slider-component";
+//import "vue-slider-component/theme/default.css";
 
 export default {
   data() {
     return {
-      maxprice: 1500,
+      //maxprice: 1500,
     };
   },
   components: {
-    VueSlider,
+    //VueSlider,
   },
   methods: {
     addToBasket(id) {
