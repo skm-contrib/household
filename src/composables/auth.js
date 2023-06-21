@@ -51,7 +51,7 @@ export default function restAuth() {
   const signUpUser = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:8001/api/v1/auth/signup",
+        "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/auth/signup",
         data
       );
 
@@ -68,7 +68,9 @@ export default function restAuth() {
   };
 
   const logoutUser = async () => {
-    await axios.post("http://localhost:8001/api/v1/auth/logout");
+    await axios.post(
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/auth/logout"
+    );
   };
 
   return {
