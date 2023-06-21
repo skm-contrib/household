@@ -76,7 +76,7 @@
       </div>
 
       <div
-        class="flex flex-col m-4 w-full px-4 sm:px-0 top-0 justify-start align-top border-emerald-400 p-12 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg"
+        class="flex flex-col p-4 w-full px-4 sm:px-0 top-0 justify-start align-top border-emerald-400 p-12 border-2 rounded-3xl bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg"
       >
         <label class="text-sm text-gray-400" for=""
           >Знайдіть товар який вам потрібно</label
