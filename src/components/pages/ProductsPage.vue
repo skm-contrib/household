@@ -88,7 +88,7 @@
             v-model="name"
           />
         </div>
-        <div class="my-4 w-full justify-center flex flex-col">
+        <div class="my-4 p-4 w-full justify-center flex flex-col">
           <label class="text-sm m-4 text-gray-400" for=""
             >Вибір бажаної категорії</label
           >
