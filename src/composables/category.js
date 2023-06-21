@@ -9,9 +9,6 @@ export default function restCategory() {
 
   const errors = ref({});
 
-  const BASE_API_URL =
-    ref["https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1"];
-
   const getCategories = async () => {
     try {
       const response = await axios.get(
@@ -25,7 +22,10 @@ export default function restCategory() {
   };
 
   const getCategory = async (id) => {
-    const response = await axios.get(BASE_API_URL.value + "/categories/" + id);
+    const response = await axios.get(
+      "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/categories/" +
+        id
+    );
     category.value = response.data.data;
   };
 
