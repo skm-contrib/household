@@ -47,7 +47,6 @@ export default function restCategory() {
 
   const createCategory = async (data) => {
     try {
-      console.log(BASE_API_URL);
       await axios.post(
         "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/categories",
         data
