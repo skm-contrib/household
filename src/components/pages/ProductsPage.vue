@@ -88,13 +88,13 @@
             v-model="name"
           />
         </div>
-        <div class="my-4 w-full m-4 justify-center flex flex-col">
+        <div class="my-4 w-full justify-center flex flex-col">
           <label class="text-sm m-4 text-gray-400" for=""
             >Вибір бажаної категорії</label
           >
           <select
             v-model="category_id"
-            class="h-16 rounded-xl w-full font-medium cursor-pointer border-2 shadow-xl border-emerald-500"
+            class="h-16 rounded-xl m-4 w-full font-medium cursor-pointer border-2 shadow-xl border-emerald-500"
             @change="makeSearch"
           >
             <option
