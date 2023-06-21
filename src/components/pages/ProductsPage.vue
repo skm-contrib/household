@@ -94,7 +94,7 @@
           >
           <select
             v-model="category_id"
-            class="h-16 rounded-xl m-4 w-full font-medium cursor-pointer border-2 shadow-xl border-emerald-500"
+            class="h-16 rounded-xl p-4 w-full font-medium cursor-pointer border-2 shadow-xl border-emerald-500"
             @change="makeSearch"
           >
             <option
