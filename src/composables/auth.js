@@ -50,6 +50,7 @@ export default function restAuth() {
 
   const signUpUser = async (data) => {
     try {
+      data.phone += "";
       const response = await axios.post(
         "https://householdchemicalstore-6a2d633af2a8.herokuapp.com/api/v1/auth/signup",
         data
