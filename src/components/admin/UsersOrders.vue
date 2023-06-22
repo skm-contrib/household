@@ -108,6 +108,7 @@
           </div>
         </div>
         <div
+          @click="deleteOrder(order.id)"
           class="routerlink cursor-pointer shadow-xl bg-red-500 hover:border-red-500 border-red-500 h-16 align-middle items-center justify-center flex hover:text-red-500"
         >
           Видалити
@@ -122,7 +123,7 @@ import { onMounted } from "vue";
 import restOrderStatus from "@/composables/order_status";
 import restOrders from "@/composables/orders";
 
-const { getOrders, orders, updateOrderStatus } = restOrders();
+const { getOrders, deleteOrder, orders, updateOrderStatus } = restOrders();
 const { getOrderStatuses, order_statuses } = restOrderStatus();
 
 const getAllProductsAndStatuses = async () => {
